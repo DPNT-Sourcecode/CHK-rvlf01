@@ -22,7 +22,7 @@ public class CheckoutSolution {
             return -1;
         }
 
-        List<Character> listOfSpecialItems = new ArrayList<>();
+        List<Integer> listOfSpecialItemsPrices = new ArrayList<>();
 
         HashMap<Character, Integer> cart = new HashMap<>();
         cart.put('A', 0);
@@ -54,22 +54,24 @@ public class CheckoutSolution {
 
 
         for (int i = 0; i < skus.length(); i++) {
+            // Ignore special items and store prices in a list
             if (skus.charAt(i) == 'S' || skus.charAt(i) == 'T' || skus.charAt(i) == 'X' || skus.charAt(i) == 'Y' || skus.charAt(i) == 'Z') {
-                listOfSpecialItems.add(skus.charAt(i));
+                listOfSpecialItemsPrices.add(getPrice(skus.charAt(i)));
             } else {
                 cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
             }
         }
 
         int numberOfSpecialItemsBundles = 0;
-        if (!listOfSpecialItems.isEmpty()) {
-            // Apply discount to special item bundles
-            Collections.sort(listOfSpecialItems);
-            System.out.println("Sorted list of special items in cart: " + listOfSpecialItems);
-            numberOfSpecialItemsBundles = listOfSpecialItems.size() / 3;
-            for (int i = 0; i < listOfSpecialItems.size() % 3; i++) {
-                System.out.println("Adding the left over special item: " + listOfSpecialItems.get(i));
-                cart.put(listOfSpecialItems.get(i), cart.get(listOfSpecialItems.get(i)) + 1);
+        int remainderPrice = 0;
+        if (!listOfSpecialItemsPrices.isEmpty()) {
+            // Sort prices of special items
+            Collections.sort(listOfSpecialItemsPrices);
+            System.out.println("Sorted list of prices of special items in cart: " + listOfSpecialItemsPrices);
+            numberOfSpecialItemsBundles = listOfSpecialItemsPrices.size() / 3;
+            for (int i = 0; i < listOfSpecialItemsPrices.size() % 3; i++) {
+                System.out.println("Adding the price of the left over special item: " + listOfSpecialItemsPrices.get(i));
+                remainderPrice += listOfSpecialItemsPrices.get(i);
             }
         }
         int bundlesPrice = numberOfSpecialItemsBundles * 45;
@@ -180,6 +182,28 @@ public class CheckoutSolution {
                xItemsPrice +
                yItemsPrice +
                zItemsPrice +
-               bundlesPrice;
+               bundlesPrice +
+               remainderPrice;
+    }
+
+
+    private int getPrice(Character i) {
+        if (i == 'S') {
+            return 20;
+        }
+        if (i == 'T') {
+            return 20;
+        }
+        if (i == 'X') {
+            return 17;
+        }
+        if (i == 'Y') {
+            return 20;
+        }
+        if (i == 'Z') {
+            return 21;
+        }
+        throw new RuntimeException();
     }
 }
+
