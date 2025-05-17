@@ -44,7 +44,7 @@ public class CheckoutSolutionTest {
         // 4
         assertThat(checkoutSolution.checkout("HHHHHHHHHHHHHHHH"), equalTo(135)); // 16 H
         assertThat(checkoutSolution.checkout("KKK"), equalTo(230));
-        assertThat(checkoutSolution.checkout("NNNM"), equalTo(135));
+        assertThat(checkoutSolution.checkout("NNNM"), equalTo(120));
         assertThat(checkoutSolution.checkout("NNNMM"), equalTo(135));
         assertThat(checkoutSolution.checkout("PPPPPP"), equalTo(250));
         assertThat(checkoutSolution.checkout("QQQQ"), equalTo(110));
@@ -81,3 +81,4 @@ public class CheckoutSolutionTest {
 
 
 }
+
