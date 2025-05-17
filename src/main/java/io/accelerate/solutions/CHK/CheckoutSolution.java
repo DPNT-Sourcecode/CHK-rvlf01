@@ -96,7 +96,7 @@ public class CheckoutSolution {
         //System.out.println(cart.get('R') + "R have been bought, number of chargeable Q goes from " + cart.get('Q') + " to " + newQCount);
         cart.put('Q', newQCount);
 
-        // Apply buy two U get one F free
+        // Apply buy three U get one U free
         int newUCount = cart.get('U') - cart.get('U') / 4;
         //System.out.println(cart.get('U') + "U have been bought, number of chargeable U goes from " + cart.get('U') + " to " + newUCount);
         cart.put('U', newUCount);
@@ -138,7 +138,7 @@ public class CheckoutSolution {
         int hItemsPrice = ((hCount / 10) * 80) + (((hCount % 10) / 5) * 45) + (((hCount % 10) % 5) * 10);
         int iItemsPrice = iCount * 35;
         int jItemsPrice = jCount * 60;
-        int kItemsPrice = ((kCount / 2) * 150) + ((kCount % 2) * 80);
+        int kItemsPrice = ((kCount / 2) * 120) + ((kCount % 2) * 70);
         int lItemsPrice = lCount * 90;
         int mItemsPrice = mCount * 15;
         int nItemsPrice = nCount * 40;
@@ -146,14 +146,14 @@ public class CheckoutSolution {
         int pItemsPrice = ((pCount / 5) * 200) + ((pCount % 5) * 50);
         int qItemsPrice = ((qCount / 3) * 80) + ((qCount % 3) * 30);
         int rItemsPrice = rCount * 50;
-        int sItemsPrice = sCount * 30;
-        int tItemsPrice = tCount * 20;
+        //int sItemsPrice = sCount * 20;
+        //int tItemsPrice = tCount * 20;
         int uItemsPrice = uCount * 40;
         int vItemsPrice = ((vCount / 3) * 130) + (((vCount % 3) / 2) * 90) + (((vCount % 3) % 2) * 50);
         int wItemsPrice = wCount * 20;
-        int xItemsPrice = xCount * 90;
-        int yItemsPrice = yCount * 10;
-        int zItemsPrice = zCount * 50;
+        //int xItemsPrice = xCount * 90;
+        //int yItemsPrice = yCount * 10;
+        //int zItemsPrice = zCount * 50;
 
 
         return aItemsPrice +
@@ -174,14 +174,14 @@ public class CheckoutSolution {
                pItemsPrice +
                qItemsPrice +
                rItemsPrice +
-               sItemsPrice +
-               tItemsPrice +
+               //sItemsPrice +
+               //tItemsPrice +
                uItemsPrice +
                vItemsPrice +
                wItemsPrice +
-               xItemsPrice +
-               yItemsPrice +
-               zItemsPrice +
+               //xItemsPrice +
+              //yItemsPrice +
+               //zItemsPrice +
                bundlesPrice +
                remainderPrice;
     }
@@ -206,4 +206,5 @@ public class CheckoutSolution {
         throw new RuntimeException();
     }
 }
+
 
