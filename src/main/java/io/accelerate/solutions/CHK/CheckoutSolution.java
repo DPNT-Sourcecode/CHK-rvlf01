@@ -73,7 +73,7 @@ public class CheckoutSolution {
         cart.put('Q', newQCount);
 
         // Apply buy two U get one F free
-        int newUCount = cart.get('U') - cart.get('U') / 3;
+        int newUCount = cart.get('U') - cart.get('U') / 4;
         //System.out.println(cart.get('U') + "U have been bought, number of chargeable U goes from " + cart.get('U') + " to " + newUCount);
         cart.put('U', newUCount);
 
@@ -159,4 +159,5 @@ public class CheckoutSolution {
                zItemsPrice;
     }
 }
+
 
