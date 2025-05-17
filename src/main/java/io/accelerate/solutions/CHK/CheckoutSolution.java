@@ -35,6 +35,7 @@ public class CheckoutSolution {
 
         // Apply buy two E get one B free
         int newBCount = Math.max(0, cart.get('B') - cart.get('E') / 2);
+        System.out.println(cart.get('E') + "E have been bought, number of chargeable B goes from " + cart.get('B') + " to " + newBCount);
         cart.put('B', newBCount);
 
         int aCount = cart.get('A');
@@ -52,6 +53,7 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice;
     }
 }
+
 
 
 
