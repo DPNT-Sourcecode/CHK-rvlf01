@@ -18,6 +18,10 @@ public class CheckoutSolution {
             return 0;
         }
 
+        if (!skus.matches("[ABCDE]+")) {
+            return -1;
+        }
+
         HashMap<Character, Integer> cart = new HashMap<>();
         cart.put('A', 0);
         cart.put('B', 0);
@@ -31,6 +35,8 @@ public class CheckoutSolution {
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
 
+        int aCount = skus.count('A');
+
         int aItemsPrice = ((cart.get('A') / 3) * 130) + ((cart.get('A') % 3) * 50);
         int bItemsPrice = ((cart.get('B') / 2) * 45) + ((cart.get('B') % 2) * 30);
         int cItemsPrice = cart.get('C') * 20;
@@ -39,3 +45,4 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice;
     }
 }
+
