@@ -22,7 +22,5 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("CCC"), equalTo(80));
         assertThat(checkoutSolution.checkout("BBBB"), equalTo(75));
         assertThat(checkoutSolution.checkout("AAABB"), equalTo(175));
-
-
     }
 }
