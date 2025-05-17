@@ -19,7 +19,9 @@ public class CheckoutSolution {
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
 
-        
+        int cItemsPrice = cart.get("C") * 20;
+        int dItemsPrice = cart.get("CD") * 15;
+
 
         return -1;
     }
