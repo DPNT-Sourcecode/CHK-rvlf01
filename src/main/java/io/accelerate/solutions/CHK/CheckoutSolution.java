@@ -15,7 +15,7 @@ public class CheckoutSolution {
             return 0;
         }
 
-        if (!skus.matches("[ABCDEF]+")) {
+        if (!skus.matches("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]+")) {
             return -1;
         }
 
@@ -26,6 +26,27 @@ public class CheckoutSolution {
         cart.put('D', 0);
         cart.put('E', 0);
         cart.put('F', 0);
+        cart.put('G', 0);
+        cart.put('H', 0);
+        cart.put('I', 0);
+        cart.put('J', 0);
+        cart.put('K', 0);
+        cart.put('L', 0);
+        cart.put('M', 0);
+        cart.put('N', 0);
+        cart.put('O', 0);
+        cart.put('P', 0);
+        cart.put('Q', 0);
+        cart.put('R', 0);
+        cart.put('S', 0);
+        cart.put('T', 0);
+        cart.put('U', 0);
+        cart.put('V', 0);
+        cart.put('W', 0);
+        cart.put('X', 0);
+        cart.put('Y', 0);
+        cart.put('Z', 0);
+
 
         for (int i = 0; i < skus.length(); i++) {
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
@@ -47,6 +68,28 @@ public class CheckoutSolution {
         int dCount = cart.get('D');
         int eCount = cart.get('E');
         int fCount = cart.get('F');
+        int gCount = cart.get('G');
+        int hCount = cart.get('H');
+        int iCount = cart.get('I');
+        int jCount = cart.get('J');
+        int kCount = cart.get('K');
+        int lCount = cart.get('L');
+        int mCount = cart.get('M');
+        int nCount = cart.get('N');
+        int oCount = cart.get('O');
+        int pCount = cart.get('P');
+        int qCount = cart.get('Q');
+        int rCount = cart.get('R');
+        int sCount = cart.get('S');
+        int tCount = cart.get('T');
+        int uCount = cart.get('U');
+        int vCount = cart.get('V');
+        int wCount = cart.get('W');
+        int xCount = cart.get('X');
+        int yCount = cart.get('Y');
+        int zCount = cart.get('Z');
+
+
 
         int aItemsPrice = ((aCount / 5) * 200) + (((aCount % 5) / 3) * 130) + (((aCount % 5) % 3) * 50);
         int bItemsPrice = ((bCount / 2) * 45) + ((bCount % 2) * 30);
@@ -58,6 +101,3 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice + fItemsPrice;
     }
 }
-
-
-
