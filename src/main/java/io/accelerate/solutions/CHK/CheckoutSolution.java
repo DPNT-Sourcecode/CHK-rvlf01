@@ -3,6 +3,7 @@ package io.accelerate.solutions.CHK;
 import io.accelerate.runner.SolutionNotImplementedException;
 
 import java.util.HashMap;
+import org.apache.commons.lang3.StringUtils;
 import java.util.HashSet;
 
 public class CheckoutSolution {
@@ -35,7 +36,7 @@ public class CheckoutSolution {
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
 
-        int aCount = skus.count('A');
+        int aCount = skus.chars().filter(ch -> ch == 'A').count();
 
         int aItemsPrice = ((cart.get('A') / 3) * 130) + ((cart.get('A') % 3) * 50);
         int bItemsPrice = ((cart.get('B') / 2) * 45) + ((cart.get('B') % 2) * 30);
@@ -45,4 +46,5 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice;
     }
 }
+
 
