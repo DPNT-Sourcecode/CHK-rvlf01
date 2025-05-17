@@ -1,0 +1,31 @@
+# ~~~~~~~~~ Global ~~~~~~~~~
+
+# Ignore all dot folders
+.*/
+
+# ~~~~~~~~~ Language specific ~~~~~~~~~
+*.class
+hs_err_pid*
+build/
+out/
+target/
+
+# ~~~~~~~~~ IDE specific ~~~~~~~~~
+
+# Idea
+*.iml
+
+# ~~~~~~~~~ Accelerate ~~~~~~~~~
+challenges/
+config/
+coverage/
+coverage.tdl
+jre/
+record/
+
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
