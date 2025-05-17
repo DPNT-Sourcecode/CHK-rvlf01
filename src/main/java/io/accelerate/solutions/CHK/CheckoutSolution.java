@@ -33,7 +33,9 @@ public class CheckoutSolution {
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
 
-        
+        // Apply buy two E get one B free
+        int newBCount = Math.max(0, cart.get('B') - cart.get('E') / 2);
+        cart.put('B', newBCount);
 
         int aCount = cart.get('A');
         int bCount = cart.get('B');
@@ -50,6 +52,7 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice;
     }
 }
+
 
 
 
