@@ -8,7 +8,7 @@ import java.util.HashSet;
 public class CheckoutSolution {
 
     public Integer checkout(String skus) {
-        HashMap<String, Integer> cart = new HashMap<>();
+        HashMap<Character, Integer> cart = new HashMap<>();
         cart.put("A", 0);
         cart.put("B", 0);
         cart.put("C", 0);
@@ -16,11 +16,11 @@ public class CheckoutSolution {
 
 
         for (int i = 0; i < skus.length(); i++) {
-            cart.get(String.valueOf(skus.charAt(i)))++;
+            cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
+
+        
 
         return -1;
     }
 }
-
-
