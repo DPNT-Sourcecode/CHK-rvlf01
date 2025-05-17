@@ -39,4 +39,3 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice;
     }
 }
-
