@@ -1,6 +1,8 @@
 package io.accelerate.solutions.CHK;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class CheckoutSolution {
 
@@ -19,7 +21,7 @@ public class CheckoutSolution {
             return -1;
         }
 
-        
+        List<Character> listOfSpecialItems = new ArrayList<>();
 
         HashMap<Character, Integer> cart = new HashMap<>();
         cart.put('A', 0);
@@ -52,10 +54,11 @@ public class CheckoutSolution {
 
         for (int i = 0; i < skus.length(); i++) {
             if (skus.charAt(i) == 'S' || skus.charAt(i) == 'T' || skus.charAt(i) == 'X' || skus.charAt(i) == 'Y' || skus.charAt(i) == 'Z') {
-
+                listOfSpecialItems.add(skus.charAt(i));
             }
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
+        listOfSpecialItems.sort();
 
         // Apply buy two E get one B free
         int newBCount = Math.max(0, cart.get('B') - cart.get('E') / 2);
@@ -165,4 +168,5 @@ public class CheckoutSolution {
                zItemsPrice;
     }
 }
+
 
