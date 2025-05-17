@@ -19,6 +19,8 @@ public class CheckoutSolution {
             return -1;
         }
 
+        
+
         HashMap<Character, Integer> cart = new HashMap<>();
         cart.put('A', 0);
         cart.put('B', 0);
@@ -49,6 +51,9 @@ public class CheckoutSolution {
 
 
         for (int i = 0; i < skus.length(); i++) {
+            if (skus.charAt(i) == 'S' || skus.charAt(i) == 'T' || skus.charAt(i) == 'X' || skus.charAt(i) == 'Y' || skus.charAt(i) == 'Z') {
+
+            }
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
 
@@ -131,6 +136,7 @@ public class CheckoutSolution {
         int yItemsPrice = yCount * 10;
         int zItemsPrice = zCount * 50;
 
+
         return aItemsPrice +
                bItemsPrice +
                cItemsPrice +
@@ -159,3 +165,4 @@ public class CheckoutSolution {
                zItemsPrice;
     }
 }
+
