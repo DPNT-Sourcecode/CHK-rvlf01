@@ -1,6 +1,7 @@
 package io.accelerate.solutions.CHK;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -55,10 +56,21 @@ public class CheckoutSolution {
         for (int i = 0; i < skus.length(); i++) {
             if (skus.charAt(i) == 'S' || skus.charAt(i) == 'T' || skus.charAt(i) == 'X' || skus.charAt(i) == 'Y' || skus.charAt(i) == 'Z') {
                 listOfSpecialItems.add(skus.charAt(i));
+            } else {
+                cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
             }
-            cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
-        listOfSpecialItems.sort();
+
+        if (!listOfSpecialItems.isEmpty()) {
+            // Apply discount to special item bundles
+            Collections.sort(listOfSpecialItems);
+            System.out.println("Sorted list of special items in cart: " + listOfSpecialItems);
+            int numberOfSpecialItemsBundles = listOfSpecialItems.size() / 3;
+            for (int i = 0; i < numberOfSpecialItemsBundles % 3; i++) {
+                System.out.println("Adding the left over special item: " + listOfSpecialItems.get(i));
+                cart.put(listOfSpecialItems.get(i), cart.get(listOfSpecialItems.get(i)) + 1);
+            }
+        }
 
         // Apply buy two E get one B free
         int newBCount = Math.max(0, cart.get('B') - cart.get('E') / 2);
@@ -168,5 +180,6 @@ public class CheckoutSolution {
                zItemsPrice;
     }
 }
+
 
 
