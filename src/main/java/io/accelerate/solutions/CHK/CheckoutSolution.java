@@ -43,7 +43,7 @@ public class CheckoutSolution {
         int dCount = cart.get('D');
         int eCount = cart.get('E');
 
-        int aItemsPrice = ((aCount / 5) * 200) + (((aCount / 5) / 3) * 130) + (((aCount / 5) % 3) * 50);
+        int aItemsPrice = ((aCount / 5) * 200) + (((aCount % 5) / 3) * 130) + (((aCount % 5) % 3) * 50);
         int bItemsPrice = ((bCount / 2) * 45) + ((bCount % 2) * 30);
         int cItemsPrice = cCount * 20;
         int dItemsPrice = dCount * 15;
@@ -52,6 +52,7 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice;
     }
 }
+
 
 
 
