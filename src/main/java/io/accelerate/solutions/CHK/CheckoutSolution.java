@@ -27,19 +27,30 @@ public class CheckoutSolution {
         cart.put('B', 0);
         cart.put('C', 0);
         cart.put('D', 0);
+        cart.put('E', 0);
 
         for (int i = 0; i < skus.length(); i++) {
             cart.put(skus.charAt(i), cart.get(skus.charAt(i)) + 1);
         }
 
-        int aItemsPrice = ((cart.get('A') / 3) * 130) + ((cart.get('A') % 3) * 50);
-        int bItemsPrice = ((cart.get('B') / 2) * 45) + ((cart.get('B') % 2) * 30);
-        int cItemsPrice = cart.get('C') * 20;
-        int dItemsPrice = cart.get('D') * 15;
+        
 
-        return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice;
+        int aCount = cart.get('A');
+        int bCount = cart.get('B');
+        int cCount = cart.get('C');
+        int dCount = cart.get('D');
+        int eCount = cart.get('E');
+
+        int aItemsPrice = ((aCount / 5) * 200) + (((aCount / 5) / 3) * 130) + (((aCount / 5) % 3) * 50);
+        int bItemsPrice = ((bCount / 2) * 45) + ((bCount % 2) * 30);
+        int cItemsPrice = cCount * 20;
+        int dItemsPrice = dCount * 15;
+        int eItemsPrice = eCount * 40;
+
+        return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice;
     }
 }
+
 
 
 
