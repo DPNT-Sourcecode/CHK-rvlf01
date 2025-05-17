@@ -10,8 +10,12 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         System.out.println(skus);
 
-        if (skus.isBlank()) {
+        if (skus == null) {
             return -1;
+        }
+
+        if (skus.isEmpty()) {
+            return 0;
         }
 
         HashMap<Character, Integer> cart = new HashMap<>();
