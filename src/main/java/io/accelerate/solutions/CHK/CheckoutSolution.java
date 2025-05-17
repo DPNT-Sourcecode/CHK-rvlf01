@@ -7,12 +7,16 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         System.out.println(skus);
 
-        if (skus == null || !skus.matches("[ABCDE]+")) {
+        if (skus == null) {
             return -1;
         }
 
         if (skus.isEmpty()) {
             return 0;
+        }
+
+        if (!skus.matches("[ABCDEF]+")) {
+            return -1;
         }
 
         HashMap<Character, Integer> cart = new HashMap<>();
@@ -33,9 +37,9 @@ public class CheckoutSolution {
         cart.put('B', newBCount);
 
         // Apply buy two F get one F free
-        int newFCount = Math.max(0, cart.get('F') - cart.get('F') / 3);
-        System.out.println(cart.get('E') + "E have been bought, number of chargeable B goes from " + cart.get('B') + " to " + newBCount);
-        cart.put('B', newBCount);
+        int newFCount = cart.get('F') - cart.get('F') / 3;
+        System.out.println(cart.get('F') + "F have been bought, number of chargeable F goes from " + cart.get('F') + " to " + newFCount);
+        cart.put('F', newFCount);
 
         int aCount = cart.get('A');
         int bCount = cart.get('B');
@@ -54,5 +58,6 @@ public class CheckoutSolution {
         return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice + fItemsPrice;
     }
 }
+
 
 
