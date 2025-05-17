@@ -19,8 +19,11 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("ABAC"), equalTo(150));
         assertThat(checkoutSolution.checkout("AAA"), equalTo(130));
         assertThat(checkoutSolution.checkout("BB"), equalTo(45));
-        assertThat(checkoutSolution.checkout("CCC"), equalTo(80));
-        assertThat(checkoutSolution.checkout("BBBB"), equalTo(75));
+        assertThat(checkoutSolution.checkout("CCC"), equalTo(60));
+        assertThat(checkoutSolution.checkout("BBBB"), equalTo(90));
         assertThat(checkoutSolution.checkout("AAABB"), equalTo(175));
+        assertThat(checkoutSolution.checkout("AxA"), equalTo(-1));
+        assertThat(checkoutSolution.checkout("-"), equalTo(-1));
+        assertThat(checkoutSolution.checkout(""), equalTo(-1));
     }
 }
