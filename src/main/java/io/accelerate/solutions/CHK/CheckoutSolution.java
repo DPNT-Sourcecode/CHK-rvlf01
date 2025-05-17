@@ -32,6 +32,11 @@ public class CheckoutSolution {
         System.out.println(cart.get('E') + "E have been bought, number of chargeable B goes from " + cart.get('B') + " to " + newBCount);
         cart.put('B', newBCount);
 
+        // Apply buy two F get one F free
+        int newFCount = Math.max(0, cart.get('F') - cart.get('F') / 3);
+        System.out.println(cart.get('E') + "E have been bought, number of chargeable B goes from " + cart.get('B') + " to " + newBCount);
+        cart.put('B', newBCount);
+
         int aCount = cart.get('A');
         int bCount = cart.get('B');
         int cCount = cart.get('C');
@@ -46,7 +51,8 @@ public class CheckoutSolution {
         int eItemsPrice = eCount * 40;
         int fItemsPrice = fCount * 10;
 
-        return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice;
+        return aItemsPrice + bItemsPrice + cItemsPrice + dItemsPrice + eItemsPrice + fItemsPrice;
     }
 }
+
 
