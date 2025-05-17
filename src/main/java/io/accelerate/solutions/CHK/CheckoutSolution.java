@@ -61,16 +61,18 @@ public class CheckoutSolution {
             }
         }
 
+        int numberOfSpecialItemsBundles = 0;
         if (!listOfSpecialItems.isEmpty()) {
             // Apply discount to special item bundles
             Collections.sort(listOfSpecialItems);
             System.out.println("Sorted list of special items in cart: " + listOfSpecialItems);
-            int numberOfSpecialItemsBundles = listOfSpecialItems.size() / 3;
-            for (int i = 0; i < numberOfSpecialItemsBundles % 3; i++) {
+            numberOfSpecialItemsBundles = listOfSpecialItems.size() / 3;
+            for (int i = 0; i < listOfSpecialItems.size() % 3; i++) {
                 System.out.println("Adding the left over special item: " + listOfSpecialItems.get(i));
                 cart.put(listOfSpecialItems.get(i), cart.get(listOfSpecialItems.get(i)) + 1);
             }
         }
+        int bundlesPrice = numberOfSpecialItemsBundles * 45;
 
         // Apply buy two E get one B free
         int newBCount = Math.max(0, cart.get('B') - cart.get('E') / 2);
@@ -177,9 +179,11 @@ public class CheckoutSolution {
                wItemsPrice +
                xItemsPrice +
                yItemsPrice +
-               zItemsPrice;
+               zItemsPrice +
+               bundlesPrice;
     }
 }
+
 
 
 
